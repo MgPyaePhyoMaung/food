@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create Items</title>
+    </head>
+    <style>
+        *{
+          box-sizing: border-box;
+        }
+        .sec{         
+          width:100%;
+          height:605px;
+          background-image: url("photo6.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .main
+        {
+            position: relative;
+            left: 30%;
+            right: 30%;
+            width:40%;
+            padding-top: 30px;
+        }
+        label{
+            font-size: large;
+            font-weight: bold;
+        }
+        
+        #navbarSupportedContent a{
+          font-size:medium;
+          font-style:italic;
+        }
+      </style>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  
+ 
+  <body>
+    <div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding:1px;">
+        <a class="navbar-brand" href="home.html" style="font-weight: bolder; font-size:larger;"> Food Menu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Food Catagories
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:rgba(212, 211, 211, 0.849);">
+                <a class="dropdown-item" href="chicken.html">Chicken</a>
+                <a class="dropdown-item" href="noodle.html">Noddle</a>
+                <a class="dropdown-item" href="beer.html">Beer</a>
+            </li>
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Manage Food 
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:rgba(212, 211, 211, 0.849);">
+                <a class="dropdown-item" href="createItem.html">Create Items</a>
+                <a class="dropdown-item" href="showItem.html">Show Food Item</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="sec">
+        <div class="main">
+ 
+              <div class="form-group">
+                <label for="name">Item Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Item Name">
+             
+                <label for="price">Price:</label>
+                <input type="number" class="form-control" id="price" placeholder="Enter Item Price">
+             
+                <label for="image">Item Image:</label>
+                <select class="custom-select custom-select-sm form-control" id="image">
+                  <option value="lotteria.jpg">Chiken</option>
+                  <option value="shan.png">Noodle</option>
+                  <option value="tiger.png">Beer</option>
+                  </select>
+             
+              <label for="categorie">Categorie:</label><br>
+              <select class="custom-select custom-select-sm form-control" id="categorie">
+            <option value="Chicken">Chiken</option>
+            <option value="Noodle">Noodle</option>
+            <option value="Beer">Beer</option>
+            </select>
+              
+                <label for="description">Description:</label>
+                <textarea class="form-control rounded-0" id="description" rows="1"></textarea><br>
+              
+              <button type="button" class="btn btn-success btn-sm" onclick="addItem()">ADD</button>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="button" class="btn btn-success btn-sm" onclick="updateItem()">Update</button>
+              <input type="hidden" name="h" id="mid">
+            </div>
+          </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="js/manageFood.js"></script>
+    <script>
+      var urlParams=new URLSearchParams(window.location.search);
+      var n=urlParams.get('name');
+      var p=urlParams.get('price');
+      var img=urlParams.get('image');
+      var cat=urlParams.get('categorie');
+      var des=urlParams.get('description');
+      var id=urlParams.get('id');
+      $("#name").val(n);
+      $("#price").val(p);
+      $("#image").val(img);
+      $("#categorie").val(cat);
+      $("#description").val(des);
+      $("#mid").val(id);
+    </script>
+      </body>
+</html>

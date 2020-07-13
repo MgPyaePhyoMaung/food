@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Show Food Item</title>
+        <style>
+            *{
+              box-sizing: border-box;
+            }
+            .sec{
+              width:100%;
+              height:605px;
+              background-image: url("bg9.jpg");
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-color: rgba(128, 128, 128, 0.9);
+            }
+            
+            .main{
+                
+                position: relative;
+                left:0%;
+                right:0%;
+                width:100%;
+                height:100%;
+                overflow:auto;
+            }
+            .bar{
+                width:100%;
+                height: 10%;
+                
+            }
+            .barLeft{width:65%; height:100%; float: left;}
+            .barRight{width:35%; height:100%; float: left;}
+            .secBody{
+                width: 100%;
+                height: 90%;
+               
+            }
+            #navbarSupportedContent a{
+              font-size:medium;
+              font-style: italic;
+            }
+            img{border-radius: 50%;
+            width:80px;
+            height:80px;
+            padding-top: 0;}
+            tr{
+               border-top: hidden;
+              }
+           i{padding-left: 20px;}
+          </style>
+        <script src="js/manageFood.js"></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <script>
+      $("document").ready(function()
+      {
+        getItem();
+      });
+      
+    </script>
+    <body>
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding:1px;">
+              <a class="navbar-brand" href="home.html" style="font-weight: bolder; font-size:larger;"> Food Menu</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Food Catagories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:rgba(212, 211, 211, 0.849);">
+                      <a class="dropdown-item" href="chicken.html">Chicken</a>
+                      <a class="dropdown-item" href="noodle.html">Noddle</a>
+                      <a class="dropdown-item" href="beer.html">Beer</a>
+                  </li>
+                  <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Manage Food 
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:rgba(212, 211, 211, 0.849);">
+                      <a class="dropdown-item" href="createItem.html">Create Items</a>
+                      <a class="dropdown-item" href="showItem.html">Show Food Item</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </nav>
+          </div>
+            <div class="sec">
+              <div class="main">
+                <div class="bar"> 
+                    <div class="barLeft">
+                        <label style="font-size: larger; font-weight: bolder; padding:10px;">Show Food Items:</label>
+                    </div>
+                    <div class="barRight">
+                    <form class="form-inline" style="padding:6px;">
+                    <input class="form-control mr-sm-1" type="search" placeholder="catagorie name:" aria-label="Search">
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    </div>
+                </div>
+                <div class="secBody">
+                    <table border="0" class="table borderless" id="table">
+                        <thead>
+                          <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                            <th>Categories</th>
+                            <th>Edit/Delete</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                  
+                            
+                           
+                        </tbody>
+                      </table>
+                </div>
+              </div>
+            </div>
+    </body>
+</html>
