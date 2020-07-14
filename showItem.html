@@ -29,8 +29,9 @@
                 height: 10%;
                 
             }
-            .barLeft{width:65%; height:100%; float: left;}
-            .barRight{width:35%; height:100%; float: left;}
+            .barLeft{width:80%; height:100%; float: left;}
+            .barRight{width:20%; height:100%; float: left;}
+            
             .secBody{
                 width: 100%;
                 height: 90%;
@@ -105,8 +106,8 @@
                     </div>
                     <div class="barRight">
                     <form class="form-inline" style="padding:6px;">
-                    <input class="form-control mr-sm-1" type="search" placeholder="catagorie name:" aria-label="Search">
-                    <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+                    <input class="form-control mr-sm-1" type="search" id="searchData" aria-label="Search" placeholder="Search....">
+                    
                     </form>
                     </div>
                 </div>
@@ -131,5 +132,19 @@
                 </div>
               </div>
             </div>
+
+            <script>
+              $(document).ready(function()
+              {
+                $("#searchData").on("keyup",function()
+                {
+                  var value=$(this).val().toLowerCase();     
+                  $("#table tr").filter(function()
+                  {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1);
+                  });
+                });
+              });
+            </script>
     </body>
 </html>
